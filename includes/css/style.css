@@ -1,0 +1,477 @@
+#simplefeed_bots_protection_history td,
+#simplefeed_bots_protection_history th,
+#simplefeed_bots_protection_settings_form a {
+    padding: 0.3rem;
+}
+#simplefeed_bots_protection_history_frame {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+#simplefeed_bots_protection_history_frame-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+#simplefeed_bots_protection_history_frame-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#simplefeed_bots_protection_history_frame-close:hover,
+#simplefeed_bots_protection_history_frame-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table#simplefeed_bots_protection_settings_bots_table,
+[edition] table[right] table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th,
+[edition] table[right] table > thead > tr > th {
+    background-color: #f7f8fa;
+    color: #4a4a4a;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td,
+[edition] table[right] table > tbody > tr > td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333333;
+    font-size: 14px;
+}
+
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr:nth-child(even),
+[edition] table[right] table > tbody > tr:nth-child(even)  {
+    background-color: #f7f8fa;
+}
+
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th:has(input[path=select]),
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td:has(input[path=select]) {
+    text-align: center;
+}
+
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td:has(input[path=enable]) {
+    text-align: left;
+}
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td > select[path=access] {
+    width: 100%;
+    padding: 0px;
+}
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td > select[path=access] {
+    border: none;
+    box-shadow: none;
+    background-color: transparent; 
+}
+
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th,
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td {
+    padding: 1.1rem 0.5rem;
+    text-align: left;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_select {
+    width: 1%;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_name {
+    width: 30%;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_count {
+    width: 15%;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_last_ip {
+    width: 15%;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_last_date {
+    width: 15%;
+}
+table#simplefeed_bots_protection_settings_bots_table > thead > tr > th.head_enable {
+    width: 20%;
+}
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > th.head_menu {
+    width: 1%;
+}
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td div[path=id] {
+    text-align: center;
+}
+table#simplefeed_bots_protection_settings_bots_table > tbody > tr > td:has(div.dropdown) {
+    text-align: right;
+    padding-right: 1.5rem;
+}
+label:has(>input[name=simplefeed_bots_protection_settings_enabled]),
+label:has(>input[name=simplefeed_bots_protection_settings_enabled_backup]),
+label:has(>input#asJson),
+label:has(>input.simplefeed_bots_protection_history_action_enable), 
+label:has(>input[path=enable]) {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    zoom: 0.72;
+}
+            
+label:has(>input.simplefeed_bots_protection_history_action_enable) b,
+label:has(>input[path=enable]) b {
+    font-family:Inter;
+    position: relative;
+    left: 3.4rem;
+    top: -0.6rem;
+    zoom: 1.2;
+}
+label:has(>input[name=simplefeed_bots_protection_settings_enabled]) b,
+label:has(>input[name=simplefeed_bots_protection_settings_enabled_backup]) b,
+label:has(>input#asJson) b {
+    font-family: Inter;
+    position: relative;
+    left: 2.0rem;
+    top: 0.2em;
+    zoom: 1.4;
+}
+input[name=simplefeed_bots_protection_settings_enabled],
+input[name=simplefeed_bots_protection_settings_enabled_backup],
+input#asJson,
+input.simplefeed_bots_protection_history_action_enable,
+input[path=enable] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.simplefeed_bots_protection_settings_enabled_slider,
+.simplefeed_bots_protection_settings_enabled_backup_slider,
+.asJson_slider, 
+.simplefeed_bots_protection_history_action_enable_slider,
+.simplefeed_bots_protection_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.simplefeed_bots_protection_settings_enabled_slider:before,
+.simplefeed_bots_protection_settings_enabled_backup_slider:before,
+.asJson_slider:before,
+.simplefeed_bots_protection_history_action_enable_slider:before,
+.simplefeed_bots_protection_slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .simplefeed_bots_protection_settings_enabled_slider,
+input:checked + .simplefeed_bots_protection_settings_enabled_backup_slider,
+input:checked + .asJson_slider,
+input:checked + .simplefeed_bots_protection_history_action_enable_slider,
+input:checked + .simplefeed_bots_protection_slider {
+    background-color: #2196F3;
+}
+
+input:checked + .simplefeed_bots_protection_settings_enabled_slider:before,
+input:checked + .simplefeed_bots_protection_settings_enabled_backup_slider:before,
+input:checked + .asJson_slider:before,
+input:checked + .simplefeed_bots_protection_history_action_enable_slider:before,
+input:checked + .simplefeed_bots_protection_slider:before {
+    transform: translateX(26px);
+}
+
+#resetJson {
+    border: none; 
+    text-decoration: underline; 
+    color: #d93a3de0; 
+    cursor: pointer; 
+    font-family: Inter; 
+    font-size: 14px; font-weight: 600; 
+    line-height: 20px; 
+    text-align: left; 
+    background: transparent;
+}
+
+p.submit {
+    display: inline;
+}
+
+tr[viewing]:hover {
+    background-color: #f0f0f0;
+}
+
+tr[viewing] .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+tr[viewing] .dropdown-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+tr[viewing] .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 0px 0;
+    margin-top: -3px;
+    min-width: 200px;
+    z-index: 1;
+}
+
+tr[viewing] .dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+tr[viewing] .dropdown-menu .dropdown-item:hover {
+    background-color: #f2f2f2;
+}
+
+tr[viewing] .dropdown-menu .icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+tr[viewing] .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#simplefeed_bots_protection_settings_bots_pagination,
+table[right] [pagination] {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+#simplefeed_bots_protection_settings_bots_pagination a,
+table[right] [pagination] a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+table[right] [pagination] a {
+    padding: 8px 16px !important;
+}
+
+#simplefeed_bots_protection_settings_bots_pagination a.active,
+table[right] [pagination] a.active {
+    background-color: #2196F3;
+    color: white;
+    border: 1px solid #2196F3;
+}
+
+#simplefeed_bots_protection_settings_bots_pagination a:hover,
+table[right] [pagination] a:hover {
+    background-color: #ddd;
+}
+
+button[action=add],
+button[submit_it],
+button[close_it],
+button[delete_it] {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button[action=add]:hover,
+button[submit_it]:hover,
+button[close_it]:hover,
+button[delete_it]:hover {
+    background-color: #0056b3;
+}
+
+button[action=add]:focus,
+button[submit_it]:focus,
+button[close_it]:focus,
+button[delete_it]:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+[edition] div:has(>table[left]){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+[edition] table[left] {
+    width: 40%;
+    padding: 0% 1% 2rem 1%;
+    margin: 0px 0.5rem 0px 0rem;
+}
+[edition] table[left] td input,
+[edition] table[left] td textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+[edition] table[left] td input:focus,
+[edition] table[left] td textarea:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+[edition] table[left] td[types],
+[edition] table[left] td[categories] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+[edition] table[left] td[types] label,
+[edition] table[left] td[categories] label {
+    display: flex;
+    align-items: center;
+}
+
+
+
+[edition] table[right] {
+    width: 100%;
+    padding-left: 11px;
+}
+
+[edition] table[right] table th {
+    text-align: left;
+    font-size: smaller;
+}
+
+[edition] table[right] table th[action] {
+    width: 18%;
+}
+
+[edition] table[right] table td {
+    text-align: left;
+    padding: 0.5rem 0rem;
+    font-size: smaller;
+}
+
+a:has(.icon[open]):focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.icon[open=true]  {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: transform .2s ease-in-out;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+}
+.icon[open=false] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+    transition: transform .2s ease-in-out;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+}
+
+.need_premium {
+    position: relative;
+    /*pointer-events: none !important;*/
+    cursor: pointer;
+}
+
+.need_premium input {
+    pointer-events: none !important;
+}
+
+.need_premium::before {
+    content: "Premium feature";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 1.2em;
+    color: #076989;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    width: 98%;
+    height: 96%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border: solid 1px;
+    border-color: lightblue;
+    border-radius: 0.5rem;
+    margin: 0rem;
+    padding: 1%;
+    white-space: pre;
+}
+
+.need_premium:has(>#asJson)::before {
+    justify-content: flex-start;
+    align-items: flex-end;
+    content: '';
+    border: none;
+}
+
+#simplefeed_bots_protection_settings_additional_robotstxt_rows_editor {
+    width: 98% !important;
+}
